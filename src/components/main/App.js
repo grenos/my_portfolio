@@ -1,14 +1,15 @@
 import React from 'react';
 import { ProjectData } from '../ProjectData';
 
-import Navbar from '../navbar/Navbar';
+import Linker from '../Linker/Linker';
 import Project from '../projects/Project';
 import Footer from '../footer/Footer';
 
 export default () => {
   return (
     <div>
-      <Navbar />
+      <Linker />
+
       {ProjectData.map(project => {
         return <Project key={project.id} project={project} />;
       })}

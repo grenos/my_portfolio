@@ -2,12 +2,13 @@ import React from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faAt } from '@fortawesome/free-solid-svg-icons';
+import { faAt, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
 
 const NavwWrapper = styled.div`
   position: fixed;
+  width: 100%;
   height: 80px;
   padding: 0;
   margin: 0;
@@ -24,7 +25,7 @@ const Logo = styled.div`
 const Title = styled.h1`
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: white;
   letter-spacing: 1px;
 `;
@@ -53,6 +54,9 @@ const Navbar = () => {
           <Title>Vasilis Green</Title>
         </Logo>
         <Links>
+          <LinkItem>
+            <FontAwesomeIcon icon={faUser} size="lg" />
+          </LinkItem>
           <LinkItem>
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </LinkItem>

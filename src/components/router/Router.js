@@ -8,6 +8,7 @@ import NotFound from '../notFound/NotFound';
 const AppRouter = () => (
   <BrowserRouter>
     <div>
+      <Navbar />
       <Switch>
         <Route path="/" component={App} />
         <Route component={NotFound} />

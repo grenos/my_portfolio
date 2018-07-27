@@ -3,12 +3,12 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const LinkerWrap = styled.div`
-  position: absolute;
+  position: fixed;
   right: 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 80vh;
+  justify-content: flex-end;
+  height: 100vh;
 `;
 
 const LinkItem = styled.div`

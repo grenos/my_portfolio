@@ -21,11 +21,6 @@ const Title = styled.h1`
   font-family: 'Oswald', sans-serif;
   font-size: 6em;
   margin: 0;
-  background: #ee9ca7;
-  background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 `;
 
 const SubTitle = styled.h3`
@@ -62,25 +57,34 @@ const Button = styled.button`
 `;
 
 const Project = props => {
-  const { title, tech, info, webUrl, gitHub } = props.project;
+  const { title, tech, info, webUrl, gitHub, background } = props.project;
+
   return (
     <AppWrapper>
       <Container style={wrapperStyle}>
         <Row className="justify-content-center">
           <Col md="10">
-            <Title>{title}</Title>
+            <Title
+              style={{
+                background: `${background}`,
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent'
+              }}
+            >
+              {title}
+            </Title>
             <SubTitle>{tech}</SubTitle>
           </Col>
           <Col md="8">
             <Text>{info}</Text>
           </Col>
           <Col md="6">
-            <Button>
-              <a href={webUrl} />WEB
-            </Button>
-            <Button>
-              <a href={gitHub} />GITHUB
-            </Button>
+            <a href={webUrl} target="_blank">
+              <Button>WEB</Button>
+            </a>
+            <a href={gitHub} target="_blank">
+              <Button>GITHUB</Button>
+            </a>
           </Col>
         </Row>
       </Container>
@@ -89,3 +93,7 @@ const Project = props => {
 };
 
 export default Project;
+
+// background: #ee9ca7;
+// background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+// background-clip: text;
