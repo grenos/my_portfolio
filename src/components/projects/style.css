@@ -1,0 +1,26 @@
+
+
+.fill:hover,
+.fill:focus {
+  box-shadow: inset 0 -3.25em 0 0 var(--hover);
+}
+
+.fill { 
+  --hover: white;
+}
+
+button {
+  transition: .3s cubic-bezier(0.8, 0.5, 0.5, 1.4);
+}
+
+button:hover, button:focus {
+  border-color: var(--hover);
+  color: #141E30;
+}
+
+.rotate {
+  transform: rotate(-20deg);
+  font-size: 1.2em;
+}
+
+

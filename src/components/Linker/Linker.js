@@ -1,18 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavHashLink as NavLink } from 'react-router-hash-link';
+import Scrollspy from 'react-scrollspy';
+import './style.css';
 
 const LinkerWrap = styled.div`
   position: fixed;
-  right: 0;
+  left: 0;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   height: 100vh;
 `;
 
 const LinkItem = styled.div`
-  margin: 0 2.35em 2em 0;
+  margin: 0 0 1em 1em;
 `;
 
 let linkStyle = {
@@ -24,36 +26,49 @@ let linkStyle = {
 const Linker = () => {
   return (
     <LinkerWrap>
-      <LinkItem>
-        <NavLink to="/DELICIPES" style={linkStyle}>
-          1
-        </NavLink>
-      </LinkItem>
-      <LinkItem>
-        <NavLink to="2" style={linkStyle}>
-          2
-        </NavLink>
-      </LinkItem>
-      <LinkItem>
-        <NavLink to="3" style={linkStyle}>
-          3
-        </NavLink>
-      </LinkItem>
-      <LinkItem>
-        <NavLink to="4" style={linkStyle}>
-          4
-        </NavLink>
-      </LinkItem>
-      <LinkItem>
-        <NavLink to="5" style={linkStyle}>
-          5
-        </NavLink>
-      </LinkItem>
-      <LinkItem>
-        <NavLink to="6" style={linkStyle}>
-          6
-        </NavLink>
-      </LinkItem>
+      <Scrollspy
+        items={[
+          'delicipes',
+          'popcorn style',
+          'react components',
+          'contact list',
+          'bootstrap cards',
+          'restaurant template'
+        ]}
+        currentClassName="is-active"
+        offset={-200}
+      >
+        <LinkItem>
+          <NavLink smooth to="/#delicipes" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#popcorn style" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#react components" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#contact list" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#bootstrap cards" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#restaurant template" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+      </Scrollspy>
     </LinkerWrap>
   );
 };

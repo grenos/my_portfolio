@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from '../navbar/Navbar';
 import App from '../main/App';
+import About from '../about/About';
+import Contact from '../contact/Contact';
 import NotFound from '../notFound/NotFound';
 
 const AppRouter = () => (
@@ -10,7 +12,10 @@ const AppRouter = () => (
     <div>
       <Navbar />
       <Switch>
-        <Route path="/" component={App} />
+        <Route exact path="/" component={App} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+
         <Route component={NotFound} />
       </Switch>
     </div>

@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faUser } from '@fortawesome/free-solid-svg-icons';
@@ -50,22 +52,28 @@ const Navbar = () => {
   return (
     <div>
       <NavwWrapper>
-        <Logo>
-          <Title>Vasilis Green</Title>
-        </Logo>
+        <Link to="/">
+          <Logo>
+            <Title>Vasilis Green</Title>
+          </Logo>
+        </Link>
         <Links>
-          <LinkItem>
-            <FontAwesomeIcon icon={faUser} size="lg" />
-          </LinkItem>
+          <Link to="/about">
+            <LinkItem>
+              <FontAwesomeIcon icon={faUser} size="lg" />
+            </LinkItem>
+          </Link>
           <LinkItem>
             <FontAwesomeIcon icon={faTwitter} size="lg" />
           </LinkItem>
           <LinkItem>
             <FontAwesomeIcon icon={faGithub} size="lg" />
           </LinkItem>
-          <LinkItem>
-            <FontAwesomeIcon icon={faAt} size="lg" />
-          </LinkItem>
+          <Link to="/contact">
+            <LinkItem>
+              <FontAwesomeIcon icon={faAt} size="lg" />
+            </LinkItem>
+          </Link>
         </Links>
       </NavwWrapper>
     </div>

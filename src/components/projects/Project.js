@@ -1,9 +1,17 @@
 import React from 'react';
 
-import styled from 'styled-components';
+import './style.css';
+import styled, { keyframes } from 'styled-components';
 
-import 'bootstrap/dist/css/bootstrap-grid.css';
 import { Container, Row, Col } from 'reactstrap';
+
+// const floatAnim = keyframes`
+//   from { transform: translate(0,-10px); }
+//   to {transform: translate(0,10px); }
+// `;
+
+// animation: ${floatAnim} 1s ease-in-out;
+// animation-fill-mode: initial;
 
 const AppWrapper = styled.div`
   display: flex;
@@ -21,6 +29,10 @@ const Title = styled.h1`
   font-family: 'Oswald', sans-serif;
   font-size: 6em;
   margin: 0;
+`;
+
+const Tilt = styled.span`
+  font-size: 1.2em;
 `;
 
 const SubTitle = styled.h3`
@@ -47,7 +59,7 @@ const Button = styled.button`
   background: transparent;
   color: white;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   padding: 0.5em 1.5em 0.3em;
   margin: 1em;
   border-radius: 0.2em;
@@ -59,8 +71,15 @@ const Button = styled.button`
 const Project = props => {
   const { title, tech, info, webUrl, gitHub, background } = props.project;
 
+  // take first letter of each title to add css class to it later
+  const titleStyle = title[0].toUpperCase();
+  console.log(typeof titleStyle);
+
+  // cut firslt lette of each title
+  const titleCut = title.slice(1);
+
   return (
-    <AppWrapper>
+    <AppWrapper id={title}>
       <Container style={wrapperStyle}>
         <Row className="justify-content-center">
           <Col md="10">
@@ -71,7 +90,8 @@ const Project = props => {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              {title}
+              <span className="rotate">{titleStyle}</span>
+              {titleCut.toUpperCase()}
             </Title>
             <SubTitle>{tech}</SubTitle>
           </Col>
@@ -80,10 +100,10 @@ const Project = props => {
           </Col>
           <Col md="6">
             <a href={webUrl} target="_blank">
-              <Button>WEB</Button>
+              <Button className="fill">WEB</Button>
             </a>
             <a href={gitHub} target="_blank">
-              <Button>GITHUB</Button>
+              <Button className="fill">GITHUB</Button>
             </a>
           </Col>
         </Row>
@@ -93,7 +113,3 @@ const Project = props => {
 };
 
 export default Project;
-
-// background: #ee9ca7;
-// background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
-// background-clip: text;
