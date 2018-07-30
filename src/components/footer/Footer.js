@@ -22,21 +22,25 @@ class Footer extends React.Component {
     super(props);
 
     this.state = {
-      toggle: false
+      toggle: true
     };
   }
 
   toggleClass = () => {
     const currentState = this.state.toggle;
+
     this.setState({
       toggle: !currentState
     });
+
+    // sent data up to parent
+    this.props.toggleView(currentState);
   };
 
   render() {
-    //
-    const toggle = this.state.toggle ? 'strike-through' : null;
-    const classes = `${toggle} for-future-reference`;
+    // const classes can combine multiple classes (used as an option was not needed here)
+    const toggle = this.state.toggle ? null : 'strike-through';
+    const classes = `${toggle}`;
 
     return (
       <FooterWrapper>

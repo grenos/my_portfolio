@@ -37,7 +37,7 @@ const Tilt = styled.span`
 
 const SubTitle = styled.h3`
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 200;
   color: white;
   letter-spacing: 1px;
   font-size: 1.5em;

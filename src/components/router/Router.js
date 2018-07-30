@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navbar from '../navbar/Navbar';
-import App from '../main/App';
+import App from '../app/App';
 import About from '../about/About';
 import Contact from '../contact/Contact';
 import NotFound from '../notFound/NotFound';

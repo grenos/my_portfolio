@@ -36,7 +36,7 @@ const Linker = () => {
           'restaurant template'
         ]}
         currentClassName="is-active"
-        offset={-200}
+        offset={-160}
       >
         <LinkItem>
           <NavLink smooth to="/#delicipes" style={linkStyle}>
