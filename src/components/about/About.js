@@ -10,8 +10,8 @@ let flex = {
 
 const Text = styled.h1`
   color white;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-family: 'Inconsolata', monospace;
+  font-weight: 400;
   font-size: 1.7em;
   letter-spacing: 1px;
   line-height: 1.3em;
@@ -25,20 +25,37 @@ const About = () => {
         <Row style={flex}>
           <Col md="8">
             <Text>
-              Hoodie la croix truffaut fanny pack bitters authentic messenger
-              bag vaporware four loko. Air plant pitchfork cronut raw denim
-              kombucha, pickled street art synth neutra lo-fi poutine irony.
-              Flexitarian direct trade yuccie bitters shabby chic venmo.
-              Microdosing party bicycle rights etsy mustache, blog heirloom
-              ethical ramps forage letterpress keffiyeh tacos hot chicken tbh
-              messenger bag.
+              <div style={{ color: 'grey' }}>
+                /* <br />
+                I'm Vasilis. I'm a frontend developer. I like building things
+                with cool design and nice functionality.
+                <br />
+                */
+              </div>
               <br />
+              <div>
+                <span style={{ color: 'yellowgreen' }}>const</span>{' '}
+                <span style={{ color: 'orange' }}>tech</span> ={' '}
+                <span style={{ color: 'yellow' }}>[</span> <br />
+                <div style={{ paddingLeft: '1em', margin: 0 }}>
+                  'HTML-CSS3-Sass', 'ES5-ES6', 'jQuery',
+                  'Bootstrap-Materialize', 'React-Redux', 'Webpack-Babel-Gulp',
+                  'Git'
+                </div>
+                <span style={{ color: 'yellow' }}>]</span>;
+              </div>
               <br />
-              Lyft slow-carb vaporware snackwave. Cold-pressed fashion axe
-              hoodie lumbersexual selvage activated charcoal, keytar sustainable
-              hashtag. Direct trade celiac. Meditation farm-to-table biodiesel
-              crucifix vape. Succulents fanny pack jean shorts tilde scenester,
-              beard gentrify pug master cleanse.
+              <div>
+                <span style={{ color: 'yellowgreen' }}>const</span>{' '}
+                <span style={{ color: 'orange' }}>
+                  worksHard, learnsDaily, coffee
+                </span>{' '}
+                = <span style={{ color: '#26a69a' }}>true</span>;
+                <br />
+                <span style={{ color: 'yellowgreen' }}>let</span>{' '}
+                <span style={{ color: 'orange' }}>sleep</span> ={' '}
+                <span style={{ color: '#26a69a' }}>undefined</span>;
+              </div>
             </Text>
           </Col>
         </Row>
