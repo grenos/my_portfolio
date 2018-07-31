@@ -1,8 +1,9 @@
 import React from 'react';
 
-import './style.css';
-import styled, { keyframes } from 'styled-components';
+import { media } from '../mediaQTemplate';
+import styled from 'styled-components';
 
+import './style.css';
 import { Container, Row, Col } from 'reactstrap';
 
 // const floatAnim = keyframes`
@@ -29,6 +30,11 @@ const Title = styled.h1`
   font-family: 'Oswald', sans-serif;
   font-size: 6em;
   margin: 0;
+
+  ${media.inch15`font-size: 6.8em;`};
+  ${media.hdScreen`font-size: 8.2em;`};
+  ${media.ipadPro`font-size: 4.4em;`};
+  ${media.ipad`font-size: 4em;`};
 `;
 
 const Tilt = styled.span`
@@ -42,6 +48,9 @@ const SubTitle = styled.h3`
   letter-spacing: 1px;
   font-size: 1.5em;
   margin: 0.5em;
+
+  ${media.inch15`font-size: 1.8em;`};
+  ${media.hdScreen`font-size: 2.1em;`};
 `;
 
 const Text = styled.h5`
@@ -52,6 +61,9 @@ const Text = styled.h5`
   font-size: 1em;
   line-height: 2em;
   margin: 0.5em;
+
+  ${media.inch15`font-size: 1.2em;`};
+  ${media.hdScreen`font-size: 1.5em;`};
 `;
 
 const Button = styled.button`
@@ -66,6 +78,10 @@ const Button = styled.button`
   &:hover {
     cursor: pointer;
   }
+
+  ${media.inch15`font-size: 1.3em; `};
+  ${media.hdScreen`font-size: 1.5em;`};
+  ${media.ipad`font-size: .9em;`};
 `;
 
 const Project = props => {
@@ -73,7 +89,6 @@ const Project = props => {
 
   // take first letter of each title to add css class to it later
   const titleStyle = title[0].toUpperCase();
-  console.log(typeof titleStyle);
 
   // cut firslt lette of each title
   const titleCut = title.slice(1);
@@ -82,7 +97,7 @@ const Project = props => {
     <AppWrapper id={title}>
       <Container style={wrapperStyle}>
         <Row className="justify-content-center">
-          <Col md="10">
+          <Col md="10" lg="12">
             <Title
               style={{
                 background: `${background}`,

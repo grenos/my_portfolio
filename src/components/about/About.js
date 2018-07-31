@@ -5,22 +5,23 @@ import styled from 'styled-components';
 
 let flex = {
   display: 'flex',
-  justifyContent: 'center'
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100vh'
 };
 
 const Text = styled.h1`
   color white;
   font-family: 'Inconsolata', monospace;
   font-weight: 400;
-  font-size: 1.7em;
+  font-size: 1.5em;
   letter-spacing: 1px;
   line-height: 1.3em;
-  margin-top: 3em;
 `;
 
 const About = () => {
   return (
-    <div style={{ height: '100vh' }}>
+    <div>
       <Container>
         <Row style={flex}>
           <Col md="8">

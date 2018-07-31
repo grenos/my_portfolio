@@ -3,7 +3,7 @@ import uuid from 'uuid';
 export const ProjectData = [
   {
     id: uuid(),
-    title: 'delicipes',
+    title: 'delecipes',
     tech: 'React Redux Router Thunk Webpack Babel Bootstrap BEM Axios',
     info: `Look for the best recipes on the web with Spoonacular's api. Search by keyword or cuisine style. You can also pair your recipe with a wine recomendation \u{1F377}`,
     webUrl: '',

@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Container, Row, Col } from 'reactstrap';
-
 let flex = {
   display: 'flex',
   justifyContent: 'center',

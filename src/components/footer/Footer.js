@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { media } from '../mediaQTemplate';
 import './style.css';
 import styled from 'styled-components';
 
@@ -15,6 +15,9 @@ const Info = styled.h3`
   color: white;
   letter-spacing: 1px;
   cursor: pointer;
+
+  ${media.inch15`font-size: 1.4em;`};
+  ${media.hdScreen`font-size: 2em;`};
 `;
 
 class Footer extends React.Component {

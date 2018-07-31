@@ -1,12 +1,22 @@
 import React from 'react';
-
+import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
-
+import { media } from '../mediaQTemplate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faAt, faUser } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
+
+// const sizes = {
+//   hdScreen: 1920,
+//   inch15: 1536,
+//   ipadPro: 1024,
+//   ipad: 768,
+//   plusPhone: 576,
+//   iphoneX8: 375,
+//   iphoneSE: 320
+// };
 
 const NavwWrapper = styled.div`
   position: fixed;
@@ -18,6 +28,9 @@ const NavwWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
+  ${media.plusPhone`z-index: 2; background: rgba(0, 0, 0, .5)`};
+  ${media.hdScreen`height: 120px;`};
 `;
 
 const Logo = styled.div`
@@ -30,6 +43,8 @@ const Title = styled.h1`
   font-weight: 300;
   color: white;
   letter-spacing: 1px;
+
+  ${media.hdScreen`font-size: 2.5em;`};
 `;
 
 const Links = styled.div`
@@ -46,6 +61,9 @@ const LinkItem = styled.div`
     transform: rotateX(360deg);
     cursor: pointer;
   }
+
+  ${media.plusPhone`font-size: 1.2em; margin-left: 1em;`};
+  ${media.hdScreen`font-size: 1.6em;`};
 `;
 
 const Url = styled.a`
@@ -58,9 +76,15 @@ const Navbar = () => {
       <NavwWrapper>
         <Link to="/">
           <Logo>
-            <Title>Vasilis Green</Title>
+            <MediaQuery query="(max-device-width: 577px)">
+              <Title>VG</Title>
+            </MediaQuery>
+            <MediaQuery query="(min-device-width: 578px)">
+              <Title>Vasilis Green</Title>
+            </MediaQuery>
           </Logo>
         </Link>
+
         <Links>
           <Link to="/about">
             <LinkItem>

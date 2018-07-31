@@ -28,7 +28,7 @@ const Linker = () => {
     <LinkerWrap>
       <Scrollspy
         items={[
-          'delicipes',
+          'delecipes',
           'popcorn style',
           'react components',
           'contact list',
@@ -36,10 +36,10 @@ const Linker = () => {
           'restaurant template'
         ]}
         currentClassName="is-active"
-        offset={-160}
+        offset={-240}
       >
         <LinkItem>
-          <NavLink smooth to="/#delicipes" style={linkStyle}>
+          <NavLink smooth to="/#delecipes" style={linkStyle}>
             <span className="line" />
           </NavLink>
         </LinkItem>

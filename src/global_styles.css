@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300,400');
 @import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
 
-@import "~slick-carousel/slick/slick.css";
+
 
 a{
   text-decoration: none;
@@ -15,4 +15,23 @@ body{
   background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
 }
+
+
+/* not sure about translate yet - - staays here for now */
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+  /* transform: translate(0,-20px); */
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  /* transform:   translate(0,0); */
+	transition-property: transform, opacity;
+  transition-duration: 250ms;
+  /* transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear; */
+}
+
+
+
 

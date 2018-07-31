@@ -1,4 +1,6 @@
 import React from 'react';
+import validator from 'validator';
+// import isEmail from 'validator/lib/isEmail';
 
 import './style.css';
 import styled from 'styled-components';
@@ -21,17 +23,70 @@ class Contact extends React.Component {
     super(props);
 
     this.state = {
-      subject: ''
+      subject: '',
+      email: '',
+      message: ''
     };
+  }
+
+  componentDidMount() {
+    const data = sessionStorage.getItem('formData');
+    const dataPrs = JSON.parse(data);
+
+    this.setState({
+      subject: dataPrs.subject,
+      email: dataPrs.email,
+      message: dataPrs.message
+    });
+  }
+
+  componentWillUnmount() {
+    const formObj = {
+      subject: this.state.subject,
+      email: this.state.email,
+      message: this.state.message
+    };
+
+    const formObjStr = JSON.stringify(formObj);
+    sessionStorage.setItem('formData', formObjStr);
   }
 
   onSubjectChange = e => {
     this.setState({
-      subject: e.target.value
+      subject: e.target.value.toUpperCase()
+    });
+  };
+
+  onEmailChange = e => {
+    this.setState({
+      email: e.target.value
+    });
+  };
+
+  onMessageChange = e => {
+    this.setState({
+      message: e.target.value
     });
   };
 
   render() {
+    //
+    let submit;
+    let email = validator.isEmail(this.state.email);
+
+    if (email === false || this.state.message.length < 5) {
+      submit = (
+        <input
+          disabled
+          className="submit-disabled"
+          type="submit"
+          value="Send"
+        />
+      );
+    } else {
+      submit = <input className="submit" type="submit" value="Send" />;
+    }
+
     return (
       <Container>
         <Wrapper>
@@ -42,9 +97,9 @@ class Contact extends React.Component {
             >
               <FormGroup>
                 <label className="labels">Subject</label>
-                <input
+                <Input
                   onChange={this.onSubjectChange}
-                  value={this.state.inputValue}
+                  value={this.state.subject}
                   autoFocus
                   className="inputs"
                   type="text"
@@ -54,29 +109,35 @@ class Contact extends React.Component {
 
               <FormGroup>
                 <label className="labels">@Email</label>
-                <input className="inputs" type="email" name="_replyto" />
+                <Input
+                  onChange={this.onEmailChange}
+                  value={this.state.email}
+                  className="inputs"
+                  type="email"
+                  name="_replyto"
+                />
               </FormGroup>
 
               <FormGroup>
                 <label className="labels">Message</label>
                 <Input
-                  style={{ height: '100px' }}
+                  onChange={this.onMessageChange}
+                  value={this.state.message}
+                  style={{ height: '150px' }}
                   className="inputs"
                   type="textarea"
                   name="message"
                 />
               </FormGroup>
 
-              <div className="submit-wrap">
-                <input className="submit" type="submit" value="Send" />
-              </div>
+              <div className="submit-wrap">{submit}</div>
 
               <input type="hidden" name="_format" value="plain" />
               <input type="hidden" name="_subject" value={this.state.subject} />
               <input
                 type="hidden"
                 name="_next"
-                value="https://site.io/thanks.html"
+                value="https://grenos.github.io/"
               />
             </Form>
           </Col>
