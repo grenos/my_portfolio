@@ -13,8 +13,8 @@ const AppRouter = () => (
       <Navbar />
       <Switch>
         <Route exact path="/" component={App} />
-        <Route path="/about" component={About} />
-        <Route path="/contact" component={Contact} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
 
         <Route component={NotFound} />
       </Switch>

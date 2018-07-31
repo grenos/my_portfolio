@@ -48,6 +48,10 @@ const LinkItem = styled.div`
   }
 `;
 
+const Url = styled.a`
+  color: white;
+`;
+
 const Navbar = () => {
   return (
     <div>
@@ -64,10 +68,14 @@ const Navbar = () => {
             </LinkItem>
           </Link>
           <LinkItem>
-            <FontAwesomeIcon icon={faTwitter} size="lg" />
+            <Url href="https://twitter.com/GreenVasilis" target="_blank">
+              <FontAwesomeIcon icon={faTwitter} size="lg" />
+            </Url>
           </LinkItem>
           <LinkItem>
-            <FontAwesomeIcon icon={faGithub} size="lg" />
+            <Url href="https://github.com/grenos" target="_blank">
+              <FontAwesomeIcon icon={faGithub} size="lg" />
+            </Url>
           </LinkItem>
           <Link to="/contact">
             <LinkItem>

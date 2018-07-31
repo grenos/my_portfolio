@@ -35,7 +35,7 @@ const About = () => {
               <br />
               <div>
                 <span style={{ color: 'yellowgreen' }}>const</span>{' '}
-                <span style={{ color: 'orange' }}>tech</span> ={' '}
+                <span style={{ color: 'orange' }}>technologies</span> ={' '}
                 <span style={{ color: 'yellow' }}>[</span> <br />
                 <div style={{ paddingLeft: '1em', margin: 0 }}>
                   'HTML-CSS3-Sass', 'ES5-ES6', 'jQuery',

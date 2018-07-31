@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 import styled from 'styled-components';
-import { Form, Container, Col } from 'reactstrap';
+import { Form, Input, Container, Col } from 'reactstrap';
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,51 +16,74 @@ const FormGroup = styled.div`
   flex-direction: column;
 `;
 
-const Contact = () => {
-  return (
-    <Container>
-      <Wrapper>
-        <Col md="6">
-          <Form
-            method="POST"
-            action="https://formspree.io/vasilis.green@gmail.com"
-          >
-            <FormGroup>
-              <label className="labels">Subject</label>
-              <input autoFocus className="inputs" type="text" name="name" />
-            </FormGroup>
+class Contact extends React.Component {
+  constructor(props) {
+    super(props);
 
-            <FormGroup>
-              <label className="labels">@Email</label>
-              <input className="inputs" type="email" name="_replyto" />
-            </FormGroup>
+    this.state = {
+      subject: ''
+    };
+  }
 
-            <FormGroup>
-              <label className="labels">Message</label>
+  onSubjectChange = e => {
+    this.setState({
+      subject: e.target.value
+    });
+  };
+
+  render() {
+    return (
+      <Container>
+        <Wrapper>
+          <Col md="6">
+            <Form
+              method="POST"
+              action="https://formspree.io/vasilis.green@gmail.com"
+            >
+              <FormGroup>
+                <label className="labels">Subject</label>
+                <input
+                  onChange={this.onSubjectChange}
+                  value={this.state.inputValue}
+                  autoFocus
+                  className="inputs"
+                  type="text"
+                  name="name"
+                />
+              </FormGroup>
+
+              <FormGroup>
+                <label className="labels">@Email</label>
+                <input className="inputs" type="email" name="_replyto" />
+              </FormGroup>
+
+              <FormGroup>
+                <label className="labels">Message</label>
+                <Input
+                  style={{ height: '100px' }}
+                  className="inputs"
+                  type="textarea"
+                  name="message"
+                />
+              </FormGroup>
+
+              <div className="submit-wrap">
+                <input className="submit" type="submit" value="Send" />
+              </div>
+
+              <input type="hidden" name="_format" value="plain" />
+              <input type="hidden" name="_subject" value={this.state.subject} />
               <input
-                style={{ height: '200px' }}
-                className="inputs"
-                type="textarea"
-                name="message"
+                type="hidden"
+                name="_next"
+                value="https://site.io/thanks.html"
               />
-            </FormGroup>
-
-            <div className="submit-wrap">
-              <input className="submit" type="submit" value="Send" />
-            </div>
-
-            <input type="hidden" name="_format" value="plain" />
-            <input type="hidden" name="_subject" value="New submission!" />
-            <input
-              type="hidden"
-              name="_next"
-              value="https://site.io/thanks.html"
-            />
-          </Form>
-        </Col>
-      </Wrapper>
-    </Container>
-  );
-};
+            </Form>
+          </Col>
+        </Wrapper>
+      </Container>
+    );
+  }
+}
 
 export default Contact;

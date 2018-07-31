@@ -15,9 +15,9 @@
   
 }
 
-input{
+/* input{
   outline: none;
-}
+} */
 
 
 
@@ -44,7 +44,9 @@ textarea {
 
 
 .submit{
-  border: none;
+  border: 1px solid white;
+  border-radius: .25em;
+  padding: .3em 1em;
   color: white;
   background-color: transparent;
   font-family: 'Yantramanav', sans-serif;
@@ -54,30 +56,9 @@ textarea {
   cursor: pointer;
 }
 
-.submit:active{
-  animation: doThings .5s;
-  color: rgb(175, 175, 175);
-}
 
 .submit:hover{
   color: rgb(175, 175, 175);
 }
 
 
-@keyframes doThings {
-  0% {
-    transform:  scale(0);
-  }
-  40% {
-    transform:  scale(1.2);
-  }
-  60% {
-    transform: scale(1);
-  }
-  80% {
-    transform: scale(1.1);
-  }
-  100% {
-    transform:  scale(1);
-  }
-}
