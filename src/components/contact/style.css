@@ -11,7 +11,7 @@
   color: white;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 1.3em;
-  font-weight: 200;
+  font-weight: 300;
   
 }
 
@@ -25,25 +25,26 @@ input[type=text] {
   color: white;
   font-family: 'Yantramanav', sans-serif;
   letter-spacing: 1px; 
-  font-weight: 200;
+  font-weight: 400;
 }
 
 input[type=email] {
   color: white;
   font-family: 'Yantramanav', sans-serif;
   letter-spacing: 1px; 
-  font-weight: 200;
+  font-weight: 400;
 }
 
 textarea {
   color: white;
   font-family: 'Yantramanav', sans-serif;
   letter-spacing: 1px; 
-  font-weight: 200;
+  font-weight: 400;
 }
 
 textarea:focus{
   background-color: rgba(255, 255, 255, .1);
+  -webkit-transition: .2s ease-in;
   transition: .2s ease-in;
 }
 
@@ -56,7 +57,7 @@ textarea:focus{
   background-color: transparent;
   font-family: 'Yantramanav', sans-serif;
   letter-spacing: 1px; 
-  font-weight: 200;
+  font-weight: 300;
   font-size: 1.2em;
   cursor: pointer;
 }
@@ -77,6 +78,31 @@ textarea:focus{
   font-weight: 200;
   font-size: 1.2em;
   cursor: not-allowed;
+}
+
+
+@media (min-width: 1536px){
+  .inputs{
+    padding: 1em;
+    margin-bottom: 1.2em;
+    resize: none;
+    font-size: 1.1em;
+  }
+  .labels{
+   margin-bottom: 0.2em;
+  }
+}
+
+@media (min-width: 1920px){
+  .inputs{
+    padding: 1.1em;
+    margin-bottom: 1.2em;
+    resize: none;
+    font-size: 1.3em;
+  }
+  .labels{
+   margin-bottom: 0.2em;
+  }
 }
 
 

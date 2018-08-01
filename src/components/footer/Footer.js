@@ -1,7 +1,8 @@
 import React from 'react';
-import { media } from '../mediaQTemplate';
+import { media } from '../helpers/mediaQTemplate';
 import './style.css';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const FooterWrapper = styled.div`
   position: fixed;
@@ -9,15 +10,29 @@ const FooterWrapper = styled.div`
   margin-left: 1.4em;
 `;
 
+const ErrorLink = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 1.4em;
+`;
+
 const Info = styled.h3`
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: white;
   letter-spacing: 1px;
   cursor: pointer;
 
   ${media.inch15`font-size: 1.4em;`};
   ${media.hdScreen`font-size: 2em;`};
+`;
+
+const Star = styled.h3`
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 300;
+  font-size: 2.6em;
+  margin: 0;
 `;
 
 class Footer extends React.Component {
@@ -46,11 +61,18 @@ class Footer extends React.Component {
     const classes = `${toggle}`;
 
     return (
-      <FooterWrapper>
-        <Info className={classes} onClick={this.toggleClass}>
-          Toggle View
-        </Info>
-      </FooterWrapper>
+      <div>
+        <FooterWrapper>
+          <Info className={classes} onClick={this.toggleClass}>
+            Toggle View
+          </Info>
+        </FooterWrapper>
+        <ErrorLink>
+          <Link to="/error">
+            <Star>*</Star>
+          </Link>
+        </ErrorLink>
+      </div>
     );
   }
 }

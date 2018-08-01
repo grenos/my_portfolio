@@ -3,6 +3,7 @@ import { css } from 'styled-components';
 const sizes = {
   hdScreen: 1920,
   inch15: 1536,
+  smallLaptop: 1366,
   ipadPro: 1024,
   ipad: 768,
   plusPhone: 576,

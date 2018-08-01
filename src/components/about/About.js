@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, Row, Col } from 'reactstrap';
-
+import { media } from '../helpers/mediaQTemplate';
 import styled from 'styled-components';
+import './style.css';
 
 let flex = {
   display: 'flex',
@@ -17,13 +18,19 @@ const Text = styled.h1`
   font-size: 1.5em;
   letter-spacing: 1px;
   line-height: 1.3em;
+
+
+  ${media.ipadPro`font-size: 1.8em;`};
+  ${media.inch15`font-size: 1.8em;`};
+  ${media.hdScreen`font-size: 2em;`};
+  ${media.plusPhone`font-size: 1em;`};
 `;
 
 const About = () => {
   return (
     <div>
       <Container>
-        <Row style={flex}>
+        <Row style={flex} className="media-width">
           <Col md="8">
             <Text>
               <div style={{ color: 'grey' }}>

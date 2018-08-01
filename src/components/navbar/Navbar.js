@@ -1,22 +1,12 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
-import { media } from '../mediaQTemplate';
+import { media } from '../helpers/mediaQTemplate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { faAt, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faAt, faUser, faHome } from '@fortawesome/free-solid-svg-icons';
 
 import styled from 'styled-components';
-
-// const sizes = {
-//   hdScreen: 1920,
-//   inch15: 1536,
-//   ipadPro: 1024,
-//   ipad: 768,
-//   plusPhone: 576,
-//   iphoneX8: 375,
-//   iphoneSE: 320
-// };
 
 const NavwWrapper = styled.div`
   position: fixed;
@@ -29,7 +19,7 @@ const NavwWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  ${media.plusPhone`z-index: 2; background: rgba(0, 0, 0, .5)`};
+  ${media.plusPhone`z-index: 2; background: rgba(0, 0, 0, .5);`};
   ${media.hdScreen`height: 120px;`};
 `;
 
@@ -51,6 +41,8 @@ const Links = styled.div`
   display: flex;
   flex-direction: row;
   margin-right: 1.5em;
+
+  ${media.plusPhone`margin-right: 0; width: 100vw; justify-content: space-around;`};
 `;
 
 const LinkItem = styled.div`
@@ -63,6 +55,7 @@ const LinkItem = styled.div`
   }
 
   ${media.plusPhone`font-size: 1.2em; margin-left: 1em;`};
+  ${media.iphoneSE`font-size: 1em;`};
   ${media.hdScreen`font-size: 1.6em;`};
 `;
 
@@ -74,18 +67,22 @@ const Navbar = () => {
   return (
     <div>
       <NavwWrapper>
-        <Link to="/">
-          <Logo>
-            <MediaQuery query="(max-device-width: 577px)">
-              <Title>VG</Title>
-            </MediaQuery>
-            <MediaQuery query="(min-device-width: 578px)">
+        <MediaQuery query="(min-device-width: 578px)">
+          <Link to="/">
+            <Logo>
               <Title>Vasilis Green</Title>
-            </MediaQuery>
-          </Logo>
-        </Link>
+            </Logo>
+          </Link>
+        </MediaQuery>
 
         <Links>
+          <MediaQuery query="(max-device-width: 577px)">
+            <Link to="/">
+              <LinkItem>
+                <FontAwesomeIcon icon={faHome} size="lg" />
+              </LinkItem>
+            </Link>
+          </MediaQuery>
           <Link to="/about">
             <LinkItem>
               <FontAwesomeIcon icon={faUser} size="lg" />

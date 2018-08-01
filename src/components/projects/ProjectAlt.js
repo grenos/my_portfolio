@@ -2,7 +2,7 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import './style.css';
 import styled from 'styled-components';
-import { media } from '../mediaQTemplate';
+import { media } from '../helpers/mediaQTemplate';
 import { Col } from 'reactstrap';
 
 let cardStyle = {
@@ -22,7 +22,7 @@ const Title = styled.h1`
 const SubTitle = styled.h3`
   font-family: 'Yantramanav', sans-serif;
   color: white;
-  font-weight: 200;
+  font-weight: 300;
   letter-spacing: 1px;
   font-size: 1em;
 

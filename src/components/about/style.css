@@ -1,0 +1,7 @@
+
+@media (max-width: 576px){
+  .media-width{
+    width: 80vw;
+    margin: 0 auto;
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 import validator from 'validator';
-// import isEmail from 'validator/lib/isEmail';
 
 import './style.css';
 import styled from 'styled-components';
@@ -31,13 +30,16 @@ class Contact extends React.Component {
 
   componentDidMount() {
     const data = sessionStorage.getItem('formData');
-    const dataPrs = JSON.parse(data);
 
-    this.setState({
-      subject: dataPrs.subject,
-      email: dataPrs.email,
-      message: dataPrs.message
-    });
+    if (data !== null) {
+      const dataPrs = JSON.parse(data);
+
+      this.setState({
+        subject: dataPrs.subject,
+        email: dataPrs.email,
+        message: dataPrs.message
+      });
+    }
   }
 
   componentWillUnmount() {
@@ -67,6 +69,10 @@ class Contact extends React.Component {
     this.setState({
       message: e.target.value
     });
+  };
+
+  onSubmit = () => {
+    sessionStorage.removeItem('formData');
   };
 
   render() {
@@ -104,6 +110,7 @@ class Contact extends React.Component {
                   className="inputs"
                   type="text"
                   name="name"
+                  autoComplete="name"
                 />
               </FormGroup>
 
@@ -115,6 +122,7 @@ class Contact extends React.Component {
                   className="inputs"
                   type="email"
                   name="_replyto"
+                  autoComplete="email"
                 />
               </FormGroup>
 
@@ -130,7 +138,9 @@ class Contact extends React.Component {
                 />
               </FormGroup>
 
-              <div className="submit-wrap">{submit}</div>
+              <div onClick={this.onSubmit} className="submit-wrap">
+                {submit}
+              </div>
 
               <input type="hidden" name="_format" value="plain" />
               <input type="hidden" name="_subject" value={this.state.subject} />

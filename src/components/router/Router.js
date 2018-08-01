@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { TransitionGroup, CSSTransition } from 'react-transition-group';
+//import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import '../../global_styles.css';
+//import '../../global_styles.css';
 
 import Navbar from '../navbar/Navbar';
 import App from '../app/App';
@@ -14,22 +14,45 @@ const AppRouter = () => (
   <BrowserRouter>
     <div>
       <Navbar />
-      <Route
-        render={({ location }) => (
-          <TransitionGroup component={null}>
-            <CSSTransition timeout={500} classNames="fade" key={location.key}>
-              <Switch location={location}>
-                <Route exact path="/" component={App} />
-                <Route exact path="/about" component={About} />
-                <Route exact path="/contact" component={Contact} />
-                <Route component={NotFound} />
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        )}
-      />
+      <Switch>
+        <Route exact path="/" component={App} />
+        <Route exact path="/about" component={About} />
+        <Route exact path="/contact" component={Contact} />
+        <Route component={NotFound} />
+      </Switch>
     </div>
   </BrowserRouter>
 );
 
 export default AppRouter;
+
+//
+//
+//
+//
+
+//! version with transition animations
+// causes a bug where the sidebar navigation will flash and the links will not work on click
+// looking for a solution
+
+// const AppRouter = () => (
+//   <BrowserRouter>
+//     <div>
+//       <Navbar />
+//       <Route
+//         render={({ location }) => (
+//           <TransitionGroup component={null}>
+//             <CSSTransition timeout={500} classNames="fade" key={location.key}>
+//               <Switch location={location}>
+//                 <Route exact path="/" component={App} />
+//                 <Route exact path="/about" component={About} />
+//                 <Route exact path="/contact" component={Contact} />
+//                 <Route component={NotFound} />
+//               </Switch>
+//             </CSSTransition>
+//           </TransitionGroup>
+//         )}
+//       />
+//     </div>
+//   </BrowserRouter>
+// );

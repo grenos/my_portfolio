@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { media } from '../mediaQTemplate';
+import { media } from '../helpers/mediaQTemplate';
 import styled from 'styled-components';
 
 import './style.css';
@@ -18,6 +18,8 @@ const AppWrapper = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
+
+  ${media.ipadPro`height: 50vh`};
 `;
 
 let wrapperStyle = {
@@ -43,7 +45,7 @@ const Tilt = styled.span`
 
 const SubTitle = styled.h3`
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 200;
+  font-weight: 300;
   color: white;
   letter-spacing: 1px;
   font-size: 1.5em;
@@ -55,7 +57,7 @@ const SubTitle = styled.h3`
 
 const Text = styled.h5`
   font-family: 'Yantramanav', sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   color: white;
   letter-spacing: 1px;
   font-size: 1em;
@@ -79,7 +81,7 @@ const Button = styled.button`
     cursor: pointer;
   }
 
-  ${media.inch15`font-size: 1.3em; `};
+  ${media.inch15`font-size: 1.1em; `};
   ${media.hdScreen`font-size: 1.5em;`};
   ${media.ipad`font-size: .9em;`};
 `;

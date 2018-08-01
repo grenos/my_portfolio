@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectData } from '../ProjectData';
+import { ProjectData } from '../helpers/ProjectData';
 import MediaQuery from 'react-responsive';
 
 import Linker from '../Linker/Linker';
@@ -7,14 +7,14 @@ import Project from '../projects/Project';
 import ProjectAlt from '../projects/ProjectAlt';
 import Footer from '../footer/Footer';
 
-import { media } from '../mediaQTemplate';
+import { media } from '../helpers/mediaQTemplate';
 import styled from 'styled-components';
 import { Container, Row } from 'reactstrap';
 
 const StyledWrapper = styled.div`
-  ${media.plusPhone`margin-top: 800px;`};
-  ${media.iphoneX8`margin-top: 950px;`};
-  ${media.iphoneSE`margin-top: 600px;`};
+  ${media.plusPhone`margin-top: 750px;`};
+  ${media.iphoneX8`margin-top: 850px;`};
+  ${media.iphoneSE`margin-top: 550px;`};
 `;
 
 let flexStyle = {
@@ -44,7 +44,7 @@ class App extends React.Component {
 
   updateWindowDimensions = () => {
     this.setState({ width: window.innerWidth });
-    if (this.state.width < 769) {
+    if (this.state.width < 993) {
       this.setState({ toggleData: true });
     } else {
       this.setState({ toggleData: false });
@@ -58,7 +58,9 @@ class App extends React.Component {
     if (!this.state.toggleData) {
       ProjectView = (
         <div>
-          <Linker />
+          <MediaQuery query="(min-device-width: 1025px)">
+            <Linker />
+          </MediaQuery>
           {ProjectData.map(project => {
             return <Project key={project.id} project={project} />;
           })}
@@ -82,7 +84,7 @@ class App extends React.Component {
       <div>
         {ProjectView}
 
-        <MediaQuery query="(min-device-width: 769px)">
+        <MediaQuery query="(min-device-width: 993px)">
           <Footer
             toggleView={toggleData => {
               this.setState({
