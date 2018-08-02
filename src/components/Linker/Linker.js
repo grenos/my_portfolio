@@ -32,8 +32,9 @@ const Linker = () => {
           'popcorn style',
           'react components',
           'contact list',
-          'bootstrap cards',
-          'restaurant template'
+          //'bootstrap cards',
+          'restaurant template',
+          'this portfolio'
         ]}
         currentClassName="is-active"
         offset={-240}
@@ -58,13 +59,18 @@ const Linker = () => {
             <span className="line" />
           </NavLink>
         </LinkItem>
-        <LinkItem>
+        {/* <LinkItem>
           <NavLink smooth to="/#bootstrap cards" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem> */}
+        <LinkItem>
+          <NavLink smooth to="/#restaurant template" style={linkStyle}>
             <span className="line" />
           </NavLink>
         </LinkItem>
         <LinkItem>
-          <NavLink smooth to="/#restaurant template" style={linkStyle}>
+          <NavLink smooth to="/#this portfolio" style={linkStyle}>
             <span className="line" />
           </NavLink>
         </LinkItem>

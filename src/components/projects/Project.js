@@ -28,10 +28,11 @@ let wrapperStyle = {
   textAlign: 'center'
 };
 
-const Title = styled.h1`
+const Title = styled.span`
   font-family: 'Oswald', sans-serif;
   font-size: 6em;
   margin: 0;
+  font-weight: 700;
 
   ${media.inch15`font-size: 6.8em;`};
   ${media.hdScreen`font-size: 8.2em;`};
@@ -39,13 +40,13 @@ const Title = styled.h1`
   ${media.ipad`font-size: 4em;`};
 `;
 
-const Tilt = styled.span`
+const Big = styled.span`
   font-size: 1.2em;
 `;
 
 const SubTitle = styled.h3`
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   letter-spacing: 1px;
   font-size: 1.5em;
@@ -57,7 +58,7 @@ const SubTitle = styled.h3`
 
 const Text = styled.h5`
   font-family: 'Yantramanav', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
   letter-spacing: 1px;
   font-size: 1em;
@@ -93,7 +94,7 @@ const Project = props => {
   const titleStyle = title[0].toUpperCase();
 
   // cut firslt lette of each title
-  const titleCut = title.slice(1);
+  const titleCut = title.slice(1).toUpperCase();
 
   return (
     <AppWrapper id={title}>
@@ -107,8 +108,8 @@ const Project = props => {
                 WebkitTextFillColor: 'transparent'
               }}
             >
-              <span className="rotate">{titleStyle}</span>
-              {titleCut.toUpperCase()}
+              <Big className="rotate">{titleStyle}</Big>
+              {titleCut}
             </Title>
             <SubTitle>{tech}</SubTitle>
           </Col>
@@ -116,12 +117,17 @@ const Project = props => {
             <Text>{info}</Text>
           </Col>
           <Col md="6">
-            <a href={webUrl} target="_blank">
-              <Button className="fill">WEB</Button>
-            </a>
-            <a href={gitHub} target="_blank">
-              <Button className="fill">GITHUB</Button>
-            </a>
+            {webUrl ? (
+              <a href={webUrl} target="_blank">
+                <Button className="fill">WEB</Button>
+              </a>
+            ) : null}
+
+            {gitHub ? (
+              <a href={gitHub} target="_blank">
+                <Button className="fill">GITHUB</Button>
+              </a>
+            ) : null}
           </Col>
         </Row>
       </Container>

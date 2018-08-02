@@ -18,8 +18,9 @@ const NavwWrapper = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  z-index: 2;
 
-  ${media.plusPhone`z-index: 2; background: rgba(0, 0, 0, .5);`};
+  ${media.plusPhone`background: rgba(0, 0, 0, .5);`};
   ${media.hdScreen`height: 120px;`};
 `;
 
@@ -67,7 +68,7 @@ const Navbar = () => {
   return (
     <div>
       <NavwWrapper>
-        <MediaQuery query="(min-device-width: 578px)">
+        <MediaQuery query="(min-width: 578px)">
           <Link to="/">
             <Logo>
               <Title>Vasilis Green</Title>
@@ -76,7 +77,7 @@ const Navbar = () => {
         </MediaQuery>
 
         <Links>
-          <MediaQuery query="(max-device-width: 577px)">
+          <MediaQuery query="(max-width: 577px)">
             <Link to="/">
               <LinkItem>
                 <FontAwesomeIcon icon={faHome} size="lg" />

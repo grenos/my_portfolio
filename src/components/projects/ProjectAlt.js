@@ -7,7 +7,7 @@ import { Col } from 'reactstrap';
 
 let cardStyle = {
   textAlign: 'center',
-  padding: '0 0 2em 0'
+  padding: '0 .5em 2em .5em'
 };
 
 const Title = styled.h1`
@@ -22,7 +22,7 @@ const Title = styled.h1`
 const SubTitle = styled.h3`
   font-family: 'Yantramanav', sans-serif;
   color: white;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: 1px;
   font-size: 1em;
 
@@ -44,16 +44,21 @@ const ProjectAlt = props => {
       >
         {title.toUpperCase()}
       </Title>
-      <MediaQuery query="(min-device-width: 321px)">
+      <MediaQuery query="(min-width: 321px)">
         <SubTitle>{tech}</SubTitle>
       </MediaQuery>
       <div className="links">
-        <a href={webUrl} target="_blank">
-          Web
-        </a>
-        <a href={gitHub} target="_blank">
-          GitHub
-        </a>
+        {webUrl ? (
+          <a href={webUrl} target="_blank">
+            Web
+          </a>
+        ) : null}
+
+        {gitHub ? (
+          <a href={gitHub} target="_blank">
+            Github
+          </a>
+        ) : null}
       </div>
     </Col>
   );

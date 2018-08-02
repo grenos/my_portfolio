@@ -1,4 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import store from '../../redux/store/store';
+import {
+  toggleState,
+  toggleStateTrue,
+  toggleStateFalse
+} from '../../redux/action/actions';
+
 import { ProjectData } from '../helpers/ProjectData';
 import MediaQuery from 'react-responsive';
 
@@ -12,9 +20,14 @@ import styled from 'styled-components';
 import { Container, Row } from 'reactstrap';
 
 const StyledWrapper = styled.div`
-  ${media.plusPhone`margin-top: 750px;`};
-  ${media.iphoneX8`margin-top: 850px;`};
-  ${media.iphoneSE`margin-top: 550px;`};
+  display: flex;
+  margin-top: auto;
+  margin-bottom: auto;
+
+  ${media.tablet`margin-top: 80px;`};
+  ${media.ipad`margin-top: auto`};
+  ${media.plusPhone`margin-top: 30px;`};
+  ${media.iphoneX8`margin-top: 30px;`};
 `;
 
 let flexStyle = {
@@ -28,11 +41,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      toggleData: null,
       width: window.innerWidth
     };
   }
 
+  // the methods bellow are used to toggle the view state of the main window on resize
+  // it works but I have to find a beter way to do it
+  // because on every pixel change there is a rerender
+  // but except from the times where the state changes (2-3 times)
+  // all the other time it renders the same thing
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);
@@ -44,10 +61,11 @@ class App extends React.Component {
 
   updateWindowDimensions = () => {
     this.setState({ width: window.innerWidth });
-    if (this.state.width < 993) {
-      this.setState({ toggleData: true });
-    } else {
-      this.setState({ toggleData: false });
+
+    if (this.state.width <= 1024) {
+      store.dispatch(toggleStateTrue());
+    } else if (this.state.width >= 1025) {
+      store.dispatch(toggleStateFalse());
     }
   };
 
@@ -55,18 +73,7 @@ class App extends React.Component {
     //
     let ProjectView;
     //
-    if (!this.state.toggleData) {
-      ProjectView = (
-        <div>
-          <MediaQuery query="(min-device-width: 1025px)">
-            <Linker />
-          </MediaQuery>
-          {ProjectData.map(project => {
-            return <Project key={project.id} project={project} />;
-          })}
-        </div>
-      );
-    } else {
+    if (this.props.toggleData) {
       ProjectView = (
         <Container style={flexStyle}>
           <StyledWrapper>
@@ -78,13 +85,24 @@ class App extends React.Component {
           </StyledWrapper>
         </Container>
       );
+    } else {
+      ProjectView = (
+        <div>
+          <MediaQuery query="(min-width: 1025px)">
+            <Linker />
+          </MediaQuery>
+          {ProjectData.map(project => {
+            return <Project key={project.id} project={project} />;
+          })}
+        </div>
+      );
     }
     //
     return (
       <div>
         {ProjectView}
 
-        <MediaQuery query="(min-device-width: 993px)">
+        <MediaQuery query="(min-width: 1025px)">
           <Footer
             toggleView={toggleData => {
               this.setState({
@@ -98,4 +116,13 @@ class App extends React.Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    toggleData: state.mainReducer.toggle
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  { toggleState, toggleStateTrue, toggleStateFalse }
+)(App);

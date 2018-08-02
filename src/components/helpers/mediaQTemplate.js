@@ -5,6 +5,7 @@ const sizes = {
   inch15: 1536,
   smallLaptop: 1366,
   ipadPro: 1024,
+  tablet: 991,
   ipad: 768,
   plusPhone: 576,
   iphoneX8: 375,

@@ -22,8 +22,6 @@ button:hover, button:focus {
 }
 
 .rotate {
-  -webkit-transform: rotate(-20deg);
-          transform: rotate(-20deg);
   font-size: 1.2em;
 }
 
@@ -73,30 +71,7 @@ button:hover, button:focus {
 }
 
 
-@-webkit-keyframes backgroundGradient {
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
 
-
-@keyframes backgroundGradient {
-  0% {
-    background-position: 50% 0%;
-  }
-  50% {
-    background-position: 50% 100%;
-  }
-  100% {
-    background-position: 50% 0%;
-  }
-}
 
 @-webkit-keyframes bigIn {
   0% {

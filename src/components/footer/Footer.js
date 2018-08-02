@@ -4,6 +4,10 @@ import './style.css';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import store from '../../redux/store/store';
+import { toggleState } from '../../redux/action/actions';
+
 const FooterWrapper = styled.div`
   position: fixed;
   bottom: 0;
@@ -35,46 +39,39 @@ const Star = styled.h3`
   margin: 0;
 `;
 
-class Footer extends React.Component {
-  constructor(props) {
-    super(props);
+const Footer = props => {
+  // const classes can combine multiple classes (used as an option was not needed here)
+  const toggle = !props.toggleData ? null : 'strike-through';
+  const classes = `${toggle}`;
 
-    this.state = {
-      toggle: true
-    };
-  }
+  return (
+    <div>
+      <FooterWrapper>
+        <Info
+          className={classes}
+          onClick={() => {
+            store.dispatch(toggleState());
+          }}
+        >
+          Toggle View
+        </Info>
+      </FooterWrapper>
+      <ErrorLink>
+        <Link to="/error">
+          <Star>*</Star>
+        </Link>
+      </ErrorLink>
+    </div>
+  );
+};
 
-  toggleClass = () => {
-    const currentState = this.state.toggle;
-
-    this.setState({
-      toggle: !currentState
-    });
-
-    // sent data up to parent
-    this.props.toggleView(currentState);
+const mapStateToProps = state => {
+  return {
+    toggleData: state.mainReducer.toggle
   };
+};
 
-  render() {
-    // const classes can combine multiple classes (used as an option was not needed here)
-    const toggle = this.state.toggle ? null : 'strike-through';
-    const classes = `${toggle}`;
-
-    return (
-      <div>
-        <FooterWrapper>
-          <Info className={classes} onClick={this.toggleClass}>
-            Toggle View
-          </Info>
-        </FooterWrapper>
-        <ErrorLink>
-          <Link to="/error">
-            <Star>*</Star>
-          </Link>
-        </ErrorLink>
-      </div>
-    );
-  }
-}
-
-export default Footer;
+export default connect(
+  mapStateToProps,
+  { toggleState }
+)(Footer);
