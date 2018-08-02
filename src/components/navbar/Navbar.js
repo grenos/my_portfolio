@@ -20,7 +20,7 @@ const NavwWrapper = styled.div`
   align-items: center;
   z-index: 2;
 
-  ${media.plusPhone`background: rgba(0, 0, 0, .5);`};
+  ${media.plusPhone`background: rgb(28, 44, 66, .98)`};
   ${media.hdScreen`height: 120px;`};
 `;
 
