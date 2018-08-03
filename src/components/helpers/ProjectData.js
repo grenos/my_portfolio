@@ -6,7 +6,7 @@ export const ProjectData = [
     title: 'delecipes',
     tech: 'React Redux React-Router Thunk Webpack Babel Bootstrap BEM Axios',
     info: `Look for the best recipes on the web with Spoonacular's api. Search by keyword or cuisine style. You can also pair your recipe with a wine recomendation \u{1F377}`,
-    webUrl: 'https://grenos.github.io/items/recipes/index.html',
+    webUrl: '/items/recipes/index.html',
     gitHub: 'https://github.com/grenos/Recipes',
     background: 'linear-gradient(to right, #4CA1AF, #2C3E50)'
   },
@@ -15,7 +15,7 @@ export const ProjectData = [
     title: 'popcorn style',
     tech: 'Vanilla ES6 jQuery libraries Fetch SCSS Bootstrap Gulp',
     info: `A Web app to see the latest movie and TV serie releases from TMDB's database along with trailers, similar recomandations and production and actors' info. All build into a Popcorn Time style theme \u{1F4FD}`,
-    webUrl: 'https://grenos.github.io/items/popcorn-style/src/index.html',
+    webUrl: '/items/popcorn-style/src/index.html',
     gitHub: 'https://github.com/grenos/Popcorn-Style-Online',
     background: 'linear-gradient(to bottom, #ffdde1, #ee9ca7)'
   },
@@ -33,7 +33,7 @@ export const ProjectData = [
     title: 'contact list',
     tech: 'Vanilla ES6 jQuery Materialize',
     info: `A contact list web app where you can save contacts and also search them on social media based on their contact information \u{1F4DA}`,
-    webUrl: 'https://grenos.github.io/items/Contacts_App/index.html',
+    webUrl: '/items/Contacts_App/index.html',
     gitHub: 'https://github.com/grenos/Contacts_App',
     background: 'linear-gradient(to right, #45B649, #DCE35B)'
   },
@@ -51,7 +51,7 @@ export const ProjectData = [
     title: 'restaurant template',
     tech: 'Vanilla ES6 jQuery Bootstrap',
     info: `A restaurant template website with emphasis on design and cool functionality \u{1F356}`,
-    webUrl: 'https://grenos.github.io/sites/prepon/index.html',
+    webUrl: '/sites/prepon/index.html',
     gitHub: '',
     background: 'linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF)'
   },

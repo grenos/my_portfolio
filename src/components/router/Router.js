@@ -1,5 +1,8 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from '../../redux/store/store';
 //import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 //import '../../global_styles.css';
@@ -11,17 +14,19 @@ import Contact from '../contact/Contact';
 import NotFound from '../notFound/NotFound';
 
 const AppRouter = () => (
-  <BrowserRouter>
-    <div>
-      <Navbar />
-      <Switch>
-        <Route exact path="/" component={App} />
-        <Route exact path="/about" component={About} />
-        <Route exact path="/contact" component={Contact} />
-        <Route component={NotFound} />
-      </Switch>
-    </div>
-  </BrowserRouter>
+  <Provider store={store}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </HashRouter>
+  </Provider>
 );
 
 export default AppRouter;

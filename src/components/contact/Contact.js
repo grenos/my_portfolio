@@ -5,11 +5,20 @@ import './style.css';
 import styled from 'styled-components';
 import { Form, Input, Container, Col } from 'reactstrap';
 
+let flex = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100vh'
+};
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  margin-top: auto;
+  margin-bottom: auto;
+  flex: 0 0 auto;
+  width: 100%;
 `;
 
 const FormGroup = styled.div`
@@ -94,8 +103,8 @@ class Contact extends React.Component {
     }
 
     return (
-      <Container>
-        <Wrapper>
+      <Container style={flex}>
+        <Wrapper className="landscape">
           <Col md="6">
             <Form
               method="POST"

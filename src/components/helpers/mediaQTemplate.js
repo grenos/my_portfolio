@@ -9,7 +9,7 @@ const sizes = {
   ipad: 768,
   plusPhone: 576,
   iphoneX8: 375,
-  iphoneSE: 320
+  iphoneSE: 360
 };
 
 export const media = Object.keys(sizes).reduce((acc, label) => {
@@ -21,6 +21,7 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
       }
     `;
     return acc;
+    //
   } else {
     //
     acc[label] = (...args) => css`
@@ -29,5 +30,6 @@ export const media = Object.keys(sizes).reduce((acc, label) => {
       }
     `;
     return acc;
+    //
   }
 }, {});

@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { media } from '../helpers/mediaQTemplate';
 import styled from 'styled-components';
 

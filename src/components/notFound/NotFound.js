@@ -23,7 +23,7 @@ const Img = styled.img`
   height: auto;
 
   ${media.ipadPro`margin-left: -39px;`};
-  ${media.smallLaptop`margin-left: -50px;`};
+  ${media.smallLaptop`margin-left: -57px;`};
   ${media.inch15`margin-left: -60px;`};
   ${media.hdScreen`margin-left: -75px;`};
   ${media.ipad`margin-left: -29px;`};

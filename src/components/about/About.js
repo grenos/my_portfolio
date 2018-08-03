@@ -11,6 +11,13 @@ let flex = {
   height: '100vh'
 };
 
+let centerFlex = {
+  display: 'flex',
+  justifyContent: 'center',
+  marginTop: 'auto',
+  marginBottom: 'auto'
+};
+
 const Text = styled.h1`
   color white;
   font-family: 'Inconsolata', monospace;
@@ -29,8 +36,8 @@ const Text = styled.h1`
 const About = () => {
   return (
     <div>
-      <Container>
-        <Row style={flex} className="media-width">
+      <Container style={flex}>
+        <Row style={centerFlex} className="media-width landscape">
           <Col md="8">
             <Text>
               <div style={{ color: 'grey' }}>
