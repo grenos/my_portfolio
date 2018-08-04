@@ -1,0 +1,8 @@
+@media (max-width: 577px){
+  .mediaQuery{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto !important;
+  }
+}

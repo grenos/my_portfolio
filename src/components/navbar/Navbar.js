@@ -20,7 +20,14 @@ const NavwWrapper = styled.div`
   align-items: center;
   z-index: 2;
 
-  ${media.plusPhone`background: rgb(28, 44, 66, .98)`};
+  ${media.plusPhone`
+    background: rgb(28, 44, 66, .98);
+    position: fixed;
+    bottom: 0;
+    height: 55px;
+    border-top: 2px solid rgba(29, 46, 70, 0.98);
+   
+  `};
   ${media.hdScreen`height: 120px;`};
 `;
 
@@ -48,6 +55,7 @@ const Links = styled.div`
 
 const LinkItem = styled.div`
   margin: 0.5em;
+
   color: white;
   &: hover {
     transition: 1s cubic-bezier(0.8, 0.5, 0.5, 1.4);

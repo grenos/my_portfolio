@@ -7,7 +7,7 @@ import { Col } from 'reactstrap';
 
 let cardStyle = {
   textAlign: 'center',
-  padding: '0 .5em 2em .5em'
+  padding: '0 .5em 4em .5em'
 };
 
 const Title = styled.h1`

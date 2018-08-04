@@ -9,6 +9,7 @@ import {
 
 import { ProjectData } from '../helpers/ProjectData';
 import MediaQuery from 'react-responsive';
+import './style.css';
 
 import Linker from '../Linker/Linker';
 import Project from '../projects/Project';
@@ -23,18 +24,37 @@ const StyledWrapper = styled.div`
   display: flex;
   margin-top: auto;
   margin-bottom: auto;
+`;
 
-  ${media.tablet`margin-top: 80px;`};
-  ${media.ipad`margin-top: auto`};
-  ${media.plusPhone`margin-top: 30px;`};
-  ${media.iphoneX8`margin-top: 30px;`};
+const AppWrap = styled.div`
+  ${media.plusPhone`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 3em;
+  `};
 `;
 
 let flexStyle = {
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
   height: '100vh'
 };
+
+// const TitleWrap = styled.div`
+//   display: flex;
+//   margin-top: 2em;
+// `;
+
+// const Title = styled.h1`
+//   font-family: 'Oswald', sans-serif;
+//   font-weight: 100;
+//   color: white;
+//   letter-spacing: 2px;
+//   font-size: 2.5em;
+//   margin-bottom: 1em;
+// `;
 
 class App extends React.Component {
   constructor(props) {
@@ -75,9 +95,14 @@ class App extends React.Component {
     //
     if (this.props.toggleData) {
       ProjectView = (
-        <Container style={flexStyle}>
+        <Container className="mediaQuery" style={flexStyle}>
           <StyledWrapper>
-            <Row style={{ paddingTop: '3em', justifyContent: 'center' }}>
+            <Row
+              style={{
+                paddingTop: '5em',
+                justifyContent: 'center'
+              }}
+            >
               {ProjectData.map(project => {
                 return <ProjectAlt key={project.id} project={project} />;
               })}
@@ -99,7 +124,13 @@ class App extends React.Component {
     }
     //
     return (
-      <div>
+      <AppWrap>
+        {/* <MediaQuery query="(max-width: 576px)">
+          <TitleWrap>
+            <Title>Vasilis Green</Title>
+          </TitleWrap>
+        </MediaQuery> */}
+
         {ProjectView}
 
         <MediaQuery query="(min-width: 1025px)">
@@ -111,7 +142,7 @@ class App extends React.Component {
             }}
           />
         </MediaQuery>
-      </div>
+      </AppWrap>
     );
   }
 }

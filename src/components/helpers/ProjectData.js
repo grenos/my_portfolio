@@ -58,8 +58,7 @@ export const ProjectData = [
   {
     id: uuid(),
     title: 'this portfolio',
-    tech:
-      'React Redux React-Router Bootstrap-Grid Styled-Components & (TransisionCSS)',
+    tech: 'React Redux React-Router Styled-Components TransisionCSS',
     info: `Renewed portfolio made with React... Because React is awesome! \u{1F393}`,
     webUrl: '',
     gitHub: 'https://github.com/grenos/my_portfolio',
