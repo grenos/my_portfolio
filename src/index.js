@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import registerServiceWorker from './registerServiceWorker';
+//import registerServiceWorker from './registerServiceWorker';
+// import { unregister } from './registerServiceWorker';
 
 import 'bootstrap/dist/css/bootstrap-grid.css';
 import './global_styles.css';
@@ -18,4 +19,5 @@ import AppRouter from './components/router/Router';
 /* give access to all components and their childs to the redux store */
 
 ReactDOM.render(<AppRouter />, document.getElementById('root'));
-registerServiceWorker();
+//registerServiceWorker();
+// unregister();

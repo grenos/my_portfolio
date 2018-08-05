@@ -21,7 +21,7 @@ const NavwWrapper = styled.div`
   z-index: 2;
 
   ${media.plusPhone`
-    background: rgb(28, 44, 66, .98);
+    background: rgba(28, 44, 66, .98);
     position: fixed;
     bottom: 0;
     height: 55px;

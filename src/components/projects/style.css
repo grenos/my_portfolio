@@ -26,6 +26,7 @@ button:hover, button:focus {
 }
 
 
+
  /* - - - - ALT VIEW - - - - */
 
 .links{
@@ -51,6 +52,13 @@ button:hover, button:focus {
   }
 }
 
+@media (max-width: 414px) { 
+  .links{
+    font-size: 1.6em;
+    margin: 0;
+  }
+}
+
 .links a {
   -webkit-transition: all .3s cubic-bezier(0.8, 0.5, 0.5, 1.4);
   transition: all .3s cubic-bezier(0.8, 0.5, 0.5, 1.4);
@@ -70,7 +78,17 @@ button:hover, button:focus {
   background-size: 100% 2px;
 }
 
+@media (max-width: 414px) { 
+  .links a{
+    margin: .5em;
+  }
+}
 
+@media (max-width: 320px) { 
+  .links a{
+    margin: .4em;
+  }
+}
 
 
 @-webkit-keyframes bigIn {

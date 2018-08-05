@@ -5,14 +5,6 @@ import styled from 'styled-components';
 import './style.css';
 import { Container, Row, Col } from 'reactstrap';
 
-// const floatAnim = keyframes`
-//   from { transform: translate(0,-10px); }
-//   to {transform: translate(0,10px); }
-// `;
-
-// animation: ${floatAnim} 1s ease-in-out;
-// animation-fill-mode: initial;
-
 const AppWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -97,7 +89,7 @@ const Project = props => {
 
   return (
     <AppWrapper id={title}>
-      <Container style={wrapperStyle}>
+      <Container className="ipad-landscape" style={wrapperStyle}>
         <Row className="justify-content-center">
           <Col md="10" lg="12">
             <Title

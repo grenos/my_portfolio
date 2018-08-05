@@ -13,10 +13,13 @@ let cardStyle = {
 const Title = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
   color: white;
-  font-weight: 300;
+  font-weight: 400;
 
   ${media.hdScreen`font-size: 3em;`};
-  ${media.iphoneSE`font-size: 1.4em;`};
+  ${media.plusPhone`
+    font-size: 2.5em;
+  `};
+  ${media.iphoneSE`font-size: 1.9em;`};
 `;
 
 const SubTitle = styled.h3`
@@ -27,14 +30,18 @@ const SubTitle = styled.h3`
   font-size: 1em;
 
   ${media.hdScreen`font-size: 1.3em;`};
-  ${media.iphoneSE`font-size: .8em;`};
+  ${media.plusPhone`
+    font-size: 1.3em;
+    line-height: 1.3em;
+  `};
+  ${media.iphoneSE`font-size: 1em;`};
 `;
 
 const ProjectAlt = props => {
   const { title, tech, webUrl, gitHub, background } = props.project;
 
   return (
-    <Col xs="8" md="6" lg="4" style={cardStyle}>
+    <Col xs="10" md="6" lg="4" style={cardStyle}>
       <Title
         style={{
           background: `${background}`,

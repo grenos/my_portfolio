@@ -7,8 +7,7 @@ import './style.css';
 let flex = {
   display: 'flex',
   justifyContent: 'center',
-  alignItems: 'center',
-  height: '100vh'
+  alignItems: 'center'
 };
 
 let centerFlex = {
@@ -30,13 +29,14 @@ const Text = styled.h1`
   ${media.ipadPro`font-size: 1.8em;`};
   ${media.inch15`font-size: 1.8em;`};
   ${media.hdScreen`font-size: 2em;`};
-  ${media.plusPhone`font-size: 1em;`};
+  ${media.plusPhone`font-size: 1.3em;`};
+  ${media.iphoneX8`font-size: 1.4em;`};
 `;
 
 const About = () => {
   return (
     <div>
-      <Container style={flex}>
+      <Container className="wrapper" style={flex}>
         <Row style={centerFlex} className="media-width landscape">
           <Col md="8">
             <Text>

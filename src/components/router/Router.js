@@ -39,6 +39,7 @@ export default AppRouter;
 //! version with transition animations
 // causes a bug where the sidebar navigation will flash and the links will not work on click
 // looking for a solution
+// also it doesnt work with hashrouter which required by the github server
 
 // const AppRouter = () => (
 //   <BrowserRouter>

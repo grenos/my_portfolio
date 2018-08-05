@@ -17,3 +17,16 @@
       padding-top: 5em;
     }
 }
+
+@media (min-width: 575px) {
+  .wrapper{
+    height: 100vh;
+  }
+}
+
+@media (max-width: 575px) {
+  .wrapper{
+    margin-top: 3em;
+    padding-bottom: 6em;
+  }
+}

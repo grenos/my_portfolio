@@ -42,20 +42,6 @@ let flexStyle = {
   height: '100vh'
 };
 
-// const TitleWrap = styled.div`
-//   display: flex;
-//   margin-top: 2em;
-// `;
-
-// const Title = styled.h1`
-//   font-family: 'Oswald', sans-serif;
-//   font-weight: 100;
-//   color: white;
-//   letter-spacing: 2px;
-//   font-size: 2.5em;
-//   margin-bottom: 1em;
-// `;
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -82,9 +68,9 @@ class App extends React.Component {
   updateWindowDimensions = () => {
     this.setState({ width: window.innerWidth });
 
-    if (this.state.width <= 1024) {
+    if (this.state.width <= 819) {
       store.dispatch(toggleStateTrue());
-    } else if (this.state.width >= 1025) {
+    } else if (this.state.width >= 820) {
       store.dispatch(toggleStateFalse());
     }
   };
@@ -125,15 +111,9 @@ class App extends React.Component {
     //
     return (
       <AppWrap>
-        {/* <MediaQuery query="(max-width: 576px)">
-          <TitleWrap>
-            <Title>Vasilis Green</Title>
-          </TitleWrap>
-        </MediaQuery> */}
-
         {ProjectView}
 
-        <MediaQuery query="(min-width: 1025px)">
+        <MediaQuery query="(min-width: 820px)">
           <Footer
             toggleView={toggleData => {
               this.setState({
