@@ -16,7 +16,7 @@ export const ProjectData = [
     title: 'popcorn style',
     tech: 'Vanilla ES6 jQuery libraries Fetch SCSS Bootstrap Gulp Responsive',
     info: `A Web app to see the latest movie and TV serie releases from TMDB's database along with trailers, similar recomandations and production and actors' info. All build into a Popcorn Time style theme \u{1F4FD}`,
-    webUrl: '/items/popcorn-style/dist/index.html',
+    webUrl: '/items/popcorn-style/src/index.html',
     gitHub: 'https://github.com/grenos/Popcorn-Style-Online',
     background: 'linear-gradient(to bottom, #ffdde1, #ee9ca7)'
   },
