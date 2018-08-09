@@ -4,7 +4,8 @@ export const ProjectData = [
   {
     id: uuid(),
     title: 'delecipes',
-    tech: 'React Redux React-Router Thunk Webpack Babel Bootstrap BEM Axios',
+    tech:
+      'React Redux React-Router Thunk Webpack Babel Bootstrap BEM Axios Responsive',
     info: `Look for the best recipes on the web with Spoonacular's api. Search by keyword or cuisine style. You can also pair your recipe with a wine recomendation \u{1F377}`,
     webUrl: '/items/recipes/index.html',
     gitHub: 'https://github.com/grenos/Recipes',
@@ -13,9 +14,9 @@ export const ProjectData = [
   {
     id: uuid(),
     title: 'popcorn style',
-    tech: 'Vanilla ES6 jQuery libraries Fetch SCSS Bootstrap Gulp',
+    tech: 'Vanilla ES6 jQuery libraries Fetch SCSS Bootstrap Gulp Responsive',
     info: `A Web app to see the latest movie and TV serie releases from TMDB's database along with trailers, similar recomandations and production and actors' info. All build into a Popcorn Time style theme \u{1F4FD}`,
-    webUrl: '/items/popcorn-style/src/index.html',
+    webUrl: '/items/popcorn-style/dist/index.html',
     gitHub: 'https://github.com/grenos/Popcorn-Style-Online',
     background: 'linear-gradient(to bottom, #ffdde1, #ee9ca7)'
   },
@@ -49,7 +50,7 @@ export const ProjectData = [
   {
     id: uuid(),
     title: 'restaurant template',
-    tech: 'Vanilla ES6 jQuery Bootstrap',
+    tech: 'Vanilla ES6 jQuery Bootstrap Responsive',
     info: `A restaurant template website with emphasis on design and cool functionality \u{1F356}`,
     webUrl: '/sites/prepon/index.html',
     gitHub: '',
@@ -58,7 +59,7 @@ export const ProjectData = [
   {
     id: uuid(),
     title: 'this portfolio',
-    tech: 'React Redux React-Router Styled-Components TransisionCSS',
+    tech: 'React Redux React-Router Styled-Components TransisionCSS Responsive',
     info: `Renewed portfolio made with React... Because React is awesome! \u{1F393}`,
     webUrl: '',
     gitHub: 'https://github.com/grenos/my_portfolio',
