@@ -5,9 +5,9 @@ export const ProjectData = [
     id: uuid(),
     title: 'delecipes',
     tech:
-      'React Redux React-Router Thunk Webpack Babel Bootstrap BEM Axios Responsive',
+      'React Redux React-Router Redux-Persist Redux-Thunk Webpack Babel Heroku Bootstrap BEM Axios Responsive',
     info: `Look for the best recipes on the web with Spoonacular's api. Search by keyword or cuisine style. You can also pair your recipe with a wine recomendation \u{1F377}`,
-    webUrl: '/items/recipes/index.html',
+    webUrl: 'https://delecipes.herokuapp.com/',
     gitHub: 'https://github.com/grenos/Recipes',
     background: 'linear-gradient(to right, #4CA1AF, #2C3E50)'
   },
