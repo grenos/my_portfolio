@@ -13,7 +13,6 @@ let cardStyle = {
 const Title = styled.h1`
   font-family: 'Josefin Sans', sans-serif;
   color: white;
-  font-weight: 400;
 
   ${media.hdScreen`font-size: 3em;`};
   ${media.plusPhone`
