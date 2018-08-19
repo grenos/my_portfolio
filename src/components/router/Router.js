@@ -12,22 +12,19 @@ import App from '../app/App';
 import About from '../about/About';
 import Contact from '../contact/Contact';
 import NotFound from '../notFound/NotFound';
-import ScrollToTop from './ScrollToTop';
 
 const AppRouter = () => (
   <Provider store={store}>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <ScrollToTop>
-        <div>
-          <Navbar />
-          <Switch>
-            <Route exact path="/" component={App} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/contact" component={Contact} />
-            <Route component={NotFound} />
-          </Switch>
-        </div>
-      </ScrollToTop>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={App} />
+          <Route exact path="/about" component={About} />
+          <Route exact path="/contact" component={Contact} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
     </BrowserRouter>
   </Provider>
 );
