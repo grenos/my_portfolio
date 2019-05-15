@@ -1,6 +1,31 @@
 {
-  "main.css": "static/css/main.94c1d85e.css",
-  "main.css.map": "static/css/main.94c1d85e.css.map",
-  "main.js": "static/js/main.6fc0ef8f.js",
-  "main.js.map": "static/js/main.6fc0ef8f.js.map"
+  "files": {
+    "main.css": "/static/css/main.f0675ca0.chunk.css",
+    "main.js": "/static/js/main.4b0c2166.chunk.js",
+    "main.js.map": "/static/js/main.4b0c2166.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.24fcee53.js",
+    "runtime~main.js.map": "/static/js/runtime~main.24fcee53.js.map",
+    "static/css/2.a21b90e1.chunk.css": "/static/css/2.a21b90e1.chunk.css",
+    "static/js/2.9fc67cff.chunk.js": "/static/js/2.9fc67cff.chunk.js",
+    "static/js/2.9fc67cff.chunk.js.map": "/static/js/2.9fc67cff.chunk.js.map",
+    "static/js/3.eb0155d1.chunk.js": "/static/js/3.eb0155d1.chunk.js",
+    "static/js/3.eb0155d1.chunk.js.map": "/static/js/3.eb0155d1.chunk.js.map",
+    "static/css/4.def19cd0.chunk.css": "/static/css/4.def19cd0.chunk.css",
+    "static/js/4.8006ba00.chunk.js": "/static/js/4.8006ba00.chunk.js",
+    "static/js/4.8006ba00.chunk.js.map": "/static/js/4.8006ba00.chunk.js.map",
+    "static/css/5.1c78f635.chunk.css": "/static/css/5.1c78f635.chunk.css",
+    "static/js/5.7f0fbfaf.chunk.js": "/static/js/5.7f0fbfaf.chunk.js",
+    "static/js/5.7f0fbfaf.chunk.js.map": "/static/js/5.7f0fbfaf.chunk.js.map",
+    "static/js/6.6327fbd4.chunk.js": "/static/js/6.6327fbd4.chunk.js",
+    "static/js/6.6327fbd4.chunk.js.map": "/static/js/6.6327fbd4.chunk.js.map",
+    "static/js/7.d3bd9668.chunk.js": "/static/js/7.d3bd9668.chunk.js",
+    "static/js/7.d3bd9668.chunk.js.map": "/static/js/7.d3bd9668.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.6736ec82d7c211777eb710f811996592.js": "/precache-manifest.6736ec82d7c211777eb710f811996592.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.a21b90e1.chunk.css.map": "/static/css/2.a21b90e1.chunk.css.map",
+    "static/css/4.def19cd0.chunk.css.map": "/static/css/4.def19cd0.chunk.css.map",
+    "static/css/5.1c78f635.chunk.css.map": "/static/css/5.1c78f635.chunk.css.map",
+    "static/css/main.f0675ca0.chunk.css.map": "/static/css/main.f0675ca0.chunk.css.map"
+  }
 }
