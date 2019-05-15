@@ -109,13 +109,13 @@ const Project = props => {
           </Col>
           <Col md="6">
             {webUrl ? (
-              <a href={webUrl} target="_blank">
+              <a href={webUrl} target="_blank" rel="noopener noreferrer">
                 <Button className="fill">WEB</Button>
               </a>
             ) : null}
 
             {gitHub ? (
-              <a href={gitHub} target="_blank">
+              <a href={gitHub} target="_blank" rel="noopener noreferrer">
                 <Button className="fill">GITHUB</Button>
               </a>
             ) : null}

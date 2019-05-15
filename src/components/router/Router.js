@@ -1,4 +1,9 @@
-import React from 'react';
+/* eslint-disable import/first */
+import React, { lazy, Suspense } from 'react';
+
+const About = lazy(() => import('../about/About'));
+const Contact = lazy(() => import('../contact/Contact'));
+const NotFound = lazy(() => import('../notFound/NotFound'));
 
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
@@ -9,9 +14,6 @@ import store from '../../redux/store/store';
 
 import Navbar from '../navbar/Navbar';
 import App from '../app/App';
-import About from '../about/About';
-import Contact from '../contact/Contact';
-import NotFound from '../notFound/NotFound';
 
 const AppRouter = () => (
   <Provider store={store}>
@@ -20,14 +22,25 @@ const AppRouter = () => (
         <Navbar />
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route component={NotFound} />
+          <Route exact path="/about" component={lazyComponent(About)} />
+          <Route exact path="/contact" component={lazyComponent(Contact)} />
+          <Route component={lazyComponent(NotFound)} />
         </Switch>
       </div>
     </BrowserRouter>
   </Provider>
 );
+
+
+function lazyComponent(Component) {
+  return props => (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Component {...props} />
+    </Suspense>
+  );
+}
+
+
 
 export default AppRouter;
 

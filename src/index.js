@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from "react-dom";
 
 //import registerServiceWorker from './registerServiceWorker';
 // import { unregister } from './registerServiceWorker';
@@ -18,6 +18,15 @@ import AppRouter from './components/router/Router';
 
 /* give access to all components and their childs to the redux store */
 
-ReactDOM.render(<AppRouter />, document.getElementById('root'));
+// ReactDOM.render(<AppRouter />, document.getElementById('root'));
+
+const rootElement = document.getElementById("root");
+if (rootElement.hasChildNodes()) {
+  hydrate(<AppRouter />, rootElement);
+} else {
+  render(<AppRouter />, rootElement);
+}
+
+
 //registerServiceWorker();
 // unregister();

@@ -55,13 +55,13 @@ const ProjectAlt = props => {
       </MediaQuery>
       <div className="links">
         {webUrl ? (
-          <a href={webUrl} target="_blank">
+          <a href={webUrl} target="_blank" rel="noopener noreferrer">
             Web
           </a>
         ) : null}
 
         {gitHub ? (
-          <a href={gitHub} target="_blank">
+          <a href={gitHub} target="_blank" rel="noopener noreferrer">
             Github
           </a>
         ) : null}

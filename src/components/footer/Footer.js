@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component, lazy, Suspense } from 'react';
 import { media } from '../helpers/mediaQTemplate';
 import './style.css';
 import styled from 'styled-components';

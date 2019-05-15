@@ -1,4 +1,7 @@
-import React from 'react';
+/* eslint-disable import/first */
+import React, { Component, lazy, Suspense } from 'react';
+const ProjectAlt = lazy(() => import('../projects/ProjectAlt'));
+
 import { connect } from 'react-redux';
 import store from '../../redux/store/store';
 import {
@@ -13,7 +16,6 @@ import './style.css';
 
 import Linker from '../Linker/Linker';
 import Project from '../projects/Project';
-import ProjectAlt from '../projects/ProjectAlt';
 import Footer from '../footer/Footer';
 
 import { media } from '../helpers/mediaQTemplate';
@@ -42,7 +44,7 @@ let flexStyle = {
   height: '100vh'
 };
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
 
@@ -75,6 +77,8 @@ class App extends React.Component {
     }
   };
 
+  renderLoader = () => <div className="loader">loading</div>;
+
   render() {
     //
     let ProjectView;
@@ -90,7 +94,13 @@ class App extends React.Component {
               }}
             >
               {ProjectData.map(project => {
-                return <ProjectAlt key={project.id} project={project} />;
+                return (
+                  <>
+                    <Suspense fallback={this.renderLoader()}>
+                      <ProjectAlt key={project.id} project={project} />
+                    </Suspense>
+                  </>
+                )
               })}
             </Row>
           </StyledWrapper>
