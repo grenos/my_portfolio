@@ -3,6 +3,25 @@ import uuid from 'uuid';
 export const ProjectData = [
   {
     id: uuid(),
+    title: 'popcorn 2',
+    tech:
+      'TypeScript AWS-Auth React Redux React-Router Redux-Persist Redux-Saga React-Spring TDD(Jest, Enzyme)',
+    info: `A reconstruction of Popcorn Style with newer and better technologies + Netflix UI ripoff! \u{1F4FD}`,
+    webUrl: 'https://popcorn2.herokuapp.com',
+    gitHub: 'https://github.com/grenos/popcorn2',
+    background: 'linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF)'
+  },
+  {
+    id: uuid(),
+    title: 'asos redesign',
+    tech: `React Native Redux Redux-Thunk`,
+    info: `React Native app made with Asos' hackathon api. A very limited options api stretched to the limits. This app is full of bugs! 👕`,
+    webUrl: 'https://www.youtube.com/watch?v=wFb7MzNaGFw&feature=youtu.be',
+    gitHub: 'https://github.com/grenos/asos_redesign',
+    background: 'linear-gradient(to right, #45B649, #DCE35B)'
+  },
+  {
+    id: uuid(),
     title: 'delecipes',
     tech:
       'React Redux React-Router Redux-Persist Redux-Thunk Webpack Babel Heroku Bootstrap BEM Axios Responsive',
@@ -31,38 +50,11 @@ export const ProjectData = [
   },
   {
     id: uuid(),
-    title: 'contact list',
-    tech: 'Vanilla ES6 jQuery Materialize',
-    info: `A contact list web app where you can save contacts and also search them on social media based on their contact information \u{1F4DA}`,
-    webUrl: '/items/Contacts_App/index.html',
-    gitHub: 'https://github.com/grenos/Contacts_App',
-    background: 'linear-gradient(to right, #45B649, #DCE35B)'
-  },
-  // {
-  //   id: uuid(),
-  //   title: 'bootstrap cards',
-  //   tech: 'Bootstrap Responsive CSS',
-  //   info: `A pair of Bootstrap cards with a lot of absolute positioning and layering and heavy use of media queries to fit any device \u{1F0CF}`,
-  //   webUrl: 'https://grenos.github.io/items/animated-card/index.html',
-  //   gitHub: 'https://github.com/grenos/Bootstrap-Cards',
-  //   background: 'linear-gradient(to right, #0575E6, #00F260)'
-  // },
-  {
-    id: uuid(),
-    title: 'restaurant template',
-    tech: 'Vanilla ES6 jQuery Bootstrap Responsive',
-    info: `A restaurant template website with emphasis on design and cool functionality \u{1F356}`,
-    webUrl: '/sites/prepon/index.html',
-    gitHub: '',
-    background: 'linear-gradient(to right, #FDB99B, #CF8BF3, #A770EF)'
-  },
-  {
-    id: uuid(),
     title: 'this portfolio',
     tech: 'React Redux React-Router Styled-Components TransisionCSS Responsive',
     info: `Renewed portfolio made with React... Because React is awesome! \u{1F393}`,
     webUrl: '',
     gitHub: 'https://github.com/grenos/my_portfolio',
-    background: 'linear-gradient(to right, #4CA1AF, #2C3E50)'
+    background: 'linear-gradient(to right, #ff5f6d, #ffc371)'
   }
 ];

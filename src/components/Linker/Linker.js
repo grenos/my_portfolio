@@ -28,17 +28,26 @@ const Linker = () => {
     <LinkerWrap>
       <Scrollspy
         items={[
+          'popcorn 2',
+          'asos redesign',
           'delecipes',
           'popcorn style',
           'react components',
-          'contact list',
-          //'bootstrap cards',
-          'restaurant template',
           'this portfolio'
         ]}
         currentClassName="is-active"
         offset={-240}
       >
+        <LinkItem>
+          <NavLink smooth to="/#popcorn 2" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
+        <LinkItem>
+          <NavLink smooth to="/#asos redesign" style={linkStyle}>
+            <span className="line" />
+          </NavLink>
+        </LinkItem>
         <LinkItem>
           <NavLink smooth to="/#delecipes" style={linkStyle}>
             <span className="line" />
@@ -51,21 +60,6 @@ const Linker = () => {
         </LinkItem>
         <LinkItem>
           <NavLink smooth to="/#react components" style={linkStyle}>
-            <span className="line" />
-          </NavLink>
-        </LinkItem>
-        <LinkItem>
-          <NavLink smooth to="/#contact list" style={linkStyle}>
-            <span className="line" />
-          </NavLink>
-        </LinkItem>
-        {/* <LinkItem>
-          <NavLink smooth to="/#bootstrap cards" style={linkStyle}>
-            <span className="line" />
-          </NavLink>
-        </LinkItem> */}
-        <LinkItem>
-          <NavLink smooth to="/#restaurant template" style={linkStyle}>
             <span className="line" />
           </NavLink>
         </LinkItem>

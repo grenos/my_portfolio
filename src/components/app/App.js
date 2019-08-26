@@ -53,11 +53,7 @@ class App extends Component {
     };
   }
 
-  // the methods bellow are used to toggle the view state of the main window on resize
-  // it works but I have to find a beter way to do it
-  // because on every pixel change there is a rerender
-  // but except from the times where the state changes (2-3 times)
-  // all the other time it renders the same thing
+
   componentDidMount() {
     this.updateWindowDimensions();
     window.addEventListener('resize', this.updateWindowDimensions);

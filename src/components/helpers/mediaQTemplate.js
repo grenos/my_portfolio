@@ -4,6 +4,7 @@ const sizes = {
   hdScreen: 1920,
   inch15: 1536,
   smallLaptop: 1366,
+  smallerLaptop: 1280,
   ipadPro: 1024,
   tablet: 991,
   ipad: 768,

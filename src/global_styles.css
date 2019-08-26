@@ -1,37 +1,25 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,700');
-@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
-@import url('https://fonts.googleapis.com/css?family=Yantramanav:100,300,400');
-@import url('https://fonts.googleapis.com/css?family=Inconsolata:400,700');
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans:200,300,400,700");
+@import url("https://fonts.googleapis.com/css?family=Oswald:400,700");
+@import url("https://fonts.googleapis.com/css?family=Yantramanav:100,300,400");
+@import url("https://fonts.googleapis.com/css?family=Inconsolata:400,700");
 
-
-
-a{
+a {
   text-decoration: none;
 }
 
-body{
-  background: #141E30;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  -webkit-font-smoothing:antialiased !important; 
+body {
+  background: #141e30; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #243b55, #141e30); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #243b55,
+    #141e30
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  -webkit-font-smoothing: antialiased !important;
 }
 
-
-/* not sure about translate yet - - staays here for now */
-.fade-enter {
-  opacity: 0;
-  z-index: 1;
-  /* transform: translate(0,-20px); */
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  -ms-overflow-style: none;
 }
-
-.fade-enter.fade-enter-active {
-  opacity: 1;
-  /* transform:   translate(0,0); */
-	transition-property: transform, opacity;
-  transition-duration: 250ms;
-  /* transition-timing-function: cubic-bezier(0.175, 0.665, 0.320, 1), linear; */
-}
-
-
-
-
