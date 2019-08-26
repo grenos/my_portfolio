@@ -59,7 +59,7 @@ const About = () => {
 
                 <ul className="about-list">
 
-                  <li className="about-list-item"> <span>styles</span>:
+                  <li className="about-list-item"> <span>style</span>:
                       <span style={{ color: 'yellow' }}> {'['}</span>
                     'CSS', 'Scss/Less', 'BEM', 'Styled-Components'
                       <span style={{ color: 'yellow' }}>{']'}</span>,
