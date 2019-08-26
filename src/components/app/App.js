@@ -1,6 +1,5 @@
 /* eslint-disable import/first */
-import React, { Component, lazy, Suspense } from 'react';
-const ProjectAlt = lazy(() => import('../projects/ProjectAlt'));
+import React, { Component } from 'react';
 
 import { connect } from 'react-redux';
 import store from '../../redux/store/store';
@@ -16,11 +15,13 @@ import './style.css';
 
 import Linker from '../Linker/Linker';
 import Project from '../projects/Project';
+import ProjectAlt from '../projects/ProjectAlt'
 import Footer from '../footer/Footer';
 
 import { media } from '../helpers/mediaQTemplate';
 import styled from 'styled-components';
 import { Container, Row } from 'reactstrap';
+
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -37,12 +38,19 @@ const AppWrap = styled.div`
   `};
 `;
 
+const Loader = styled.div`
+  font-size: 1.5em;
+  color: #fff;
+`;
+
 let flexStyle = {
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   height: '100vh'
 };
+
+
 
 class App extends Component {
   constructor(props) {
@@ -73,7 +81,7 @@ class App extends Component {
     }
   };
 
-  renderLoader = () => <div className="loader">loading</div>;
+  renderLoader = () => <Loader>.</Loader>;
 
   render() {
     //
@@ -91,11 +99,7 @@ class App extends Component {
             >
               {ProjectData.map(project => {
                 return (
-                  <>
-                    <Suspense fallback={this.renderLoader()}>
-                      <ProjectAlt key={project.id} project={project} />
-                    </Suspense>
-                  </>
+                  <ProjectAlt key={project.id} project={project} />
                 )
               })}
             </Row>
