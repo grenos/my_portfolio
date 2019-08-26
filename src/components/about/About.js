@@ -27,8 +27,8 @@ const Text = styled.h1`
 
 
   ${media.ipadPro`font-size: 1.6em;`};
-  ${media.inch15`font-size: 1.5em;`};
   ${media.smallerLaptop`font-size: 1.2em;`};
+  ${media.inch15`font-size: 1.5em;`};
   ${media.hdScreen`font-size: 1.6em;`};
   ${media.plusPhone`font-size: 1.3em;`};
   ${media.iphoneX8`font-size: 1.4em;`};

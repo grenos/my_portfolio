@@ -41,12 +41,12 @@ export const ProjectData = [
   },
   {
     id: uuid(),
-    title: 'react components',
-    tech: 'React and other dependencies',
-    info: `A growing collection of React components with emphasis either on functionality or design \u{1F5A5}`,
-    webUrl: '',
-    gitHub: 'https://github.com/grenos/My_React_Components',
-    background: 'linear-gradient(to right, #f05053, #e1eec3)'
+    title: 'new portfolio',
+    tech: 'Vanilla JavaScript GSAP',
+    info: `A new portfolio version (still on the works) heavily based on animations \u{1F5A5}`,
+    webUrl: 'https://parallax-slider.herokuapp.com/',
+    gitHub: 'https://github.com/grenos/parallax-slider',
+    background: 'linear-gradient(to right, #544a7d, #ffd452)'
   },
   {
     id: uuid(),

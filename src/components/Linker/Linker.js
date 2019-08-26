@@ -32,7 +32,7 @@ const Linker = () => {
           'asos redesign',
           'delecipes',
           'popcorn style',
-          'react components',
+          'new portfolio',
           'this portfolio'
         ]}
         currentClassName="is-active"
@@ -59,7 +59,7 @@ const Linker = () => {
           </NavLink>
         </LinkItem>
         <LinkItem>
-          <NavLink smooth to="/#react components" style={linkStyle}>
+          <NavLink smooth to="/#new portfolio" style={linkStyle}>
             <span className="line" />
           </NavLink>
         </LinkItem>
