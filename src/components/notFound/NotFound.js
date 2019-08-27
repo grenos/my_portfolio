@@ -18,18 +18,18 @@ let text = {
 };
 
 const Img = styled.img`
-  margin-left: -48px;
+  margin-left: -57px;
   width: 20vw;
   height: auto;
 
-  ${media.ipadPro`margin-left: -39px;`};
-  ${media.smallLaptop`margin-left: -57px;`};
-  ${media.inch15`margin-left: -60px;`};
-  ${media.hdScreen`margin-left: -75px;`};
-  ${media.ipad`margin-left: -29px;`};
-  ${media.plusPhone`margin-left: -16px;`};
-  ${media.iphoneX8`margin-left: -15px;`};
-  ${media.iphoneSE`margin-left: -12px;`};
+  ${media.ipadPro`margin-left: -45px;`};
+  ${media.smallLaptop`margin-left: -60px;`};
+  ${media.inch15`margin-left: -74px;`};
+  ${media.hdScreen`margin-left: -83px;`};
+  ${media.ipad`margin-left: -34px;`};
+  ${media.plusPhone`margin-left: -18px;`};
+  ${media.iphoneX8`margin-left: -17px;`};
+  ${media.iphoneSE`margin-left: -14px;`};
 `;
 
 const Back = styled.div`
